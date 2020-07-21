@@ -37,5 +37,5 @@ cross='✗'
 scan_dir=$(php --ini | grep additional | sed -e "s|.*: s*||")
 ext_dir=$(php -i | grep "extension_dir => /" | sed -e "s|.*=> s*||")
 status='Enabled'
-install_ioncube >/dev/null 2>&1
+install_ioncube 
 (check_extension "ioncube" && add_log "$tick" "ioncube" "$status") || add_log "$cross" "ioncube" "Could not install ioncube"

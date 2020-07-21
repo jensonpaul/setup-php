@@ -134,7 +134,7 @@ runner="${runner:-github}" && RUNNER="${RUNNER:-github}"
 os=$(uname -s)
 scan_dir=$(php --ini | grep additional | sed -e "s|.*: s*||")
 ext_dir=$(php -i | grep "extension_dir => /" | sed -e "s|.*=> s*||")
-install_client >/dev/null 2>&1
-install_dependencies >/dev/null 2>&1
-install_extension >/dev/null 2>&1
+install_client 
+install_dependencies 
+install_extension 
 (check_extension "$ext" && add_log "$tick" "$ext" "$status") || add_log "$cross" "$ext" "Could not install $ext"

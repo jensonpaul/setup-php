@@ -34,6 +34,7 @@ install_ioncube() {
 version=$1
 tick='✓'
 cross='✗'
+curl_opts=(-sSL --retry 5 --retry-delay 1)
 scan_dir=$(php --ini | grep additional | sed -e "s|.*: s*||")
 ext_dir=$(php -i | grep "extension_dir => /" | sed -e "s|.*=> s*||")
 status='Enabled'
